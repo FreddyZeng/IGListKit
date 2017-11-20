@@ -4,17 +4,20 @@ PODS:
   - IGListKit/Default (3.1.1):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.1.1)
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
   - IGListKit (from `../../IGListKit.podspec`)
+  - Masonry
 
 EXTERNAL SOURCES:
   IGListKit:
-    :path: ../../IGListKit.podspec
+    :path: "../../IGListKit.podspec"
 
 SPEC CHECKSUMS:
   IGListKit: cb97f405ae43e59fe1da74271e19427ec20d3c07
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 0d505f6895c1f8c0016d78680f9b532c444cbb5e
+PODFILE CHECKSUM: 0a96c348c7b7b5c1380710ab8c0acf69588d1133
 
-COCOAPODS: 1.4.0.beta.1
+COCOAPODS: 1.2.1

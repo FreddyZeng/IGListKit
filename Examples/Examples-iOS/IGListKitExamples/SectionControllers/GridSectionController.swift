@@ -24,7 +24,6 @@ final class GridItem: NSObject {
         self.color = color
         self.itemCount = itemCount
     }
-
 }
 
 extension GridItem: ListDiffable {

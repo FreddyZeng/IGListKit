@@ -21,6 +21,7 @@ final class FeedItemSectionController: ListSectionController, ListSupplementaryV
     override init() {
         super.init()
         supplementaryViewSource = self
+        inset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 30)
     }
 
     // MARK: IGListSectionController Overrides
