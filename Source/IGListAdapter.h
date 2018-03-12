@@ -11,6 +11,7 @@
 
 #import <IGListKit/IGListAdapterDataSource.h>
 #import <IGListKit/IGListAdapterDelegate.h>
+#import <IGListKit/IGListAdapterMoveDelegate.h>
 #import <IGListKit/IGListCollectionContext.h>
 #import <IGListKit/IGListAdapterUpdateListener.h>
 
@@ -78,6 +79,13 @@ NS_SWIFT_NAME(ListAdapter)
 @property (nonatomic, nullable, weak) id <UIScrollViewDelegate> scrollViewDelegate;
 
 /**
+ The object that receives `IGListAdapterMoveDelegate` events resulting from interactive reordering of sections.
+
+ @note This works with UICollectionView interactive reordering available on iOS 9.0+
+ */
+@property (nonatomic, nullable, weak) id <IGListAdapterMoveDelegate> moveDelegate NS_AVAILABLE_IOS(9_0);
+
+/**
  The updater for the adapter.
  */
 @property (nonatomic, strong, readonly) id <IGListUpdatingDelegate> updater;
@@ -131,6 +139,9 @@ NS_SWIFT_NAME(ListAdapter)
  Perform an immediate reload of the data in the data source, discarding the old objects.
 
  @param completion The block to execute when the reload completes.
+
+ @warning Do not use this method to update without animations as it can be very expensive to teardown and rebuild all
+ section controllers. Use `-[IGListAdapter performUpdatesAnimated:completion]` instead.
  */
 - (void)reloadDataWithCompletion:(nullable IGListUpdaterCompletion)completion;
 
